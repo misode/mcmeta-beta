@@ -15330,6 +15330,10 @@
     "tesh",
     "wmp"
   ],
+  "worldgen/structure_placement": [
+    "concentric_rings",
+    "random_spread"
+  ],
   "worldgen/structure_pool_element": [
     "empty_pool_element",
     "feature_pool_element",
