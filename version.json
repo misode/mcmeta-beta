@@ -1,14 +1,14 @@
 {
-  "id": "1.18.2",
-  "name": "1.18.2",
-  "release_target": "1.18.2",
-  "type": "release",
-  "stable": true,
-  "data_version": 2975,
-  "protocol_version": 758,
-  "data_pack_version": 9,
-  "resource_pack_version": 8,
-  "build_time": "2022-02-28T10:40:37+00:00",
-  "release_time": "2022-02-28T10:42:45+00:00",
-  "sha1": "86f9645f8398ec902cd17769058851e6fead68cf"
+  "id": "22w12a",
+  "name": "22w12a",
+  "release_target": "1.19",
+  "type": "snapshot",
+  "stable": false,
+  "data_version": 3082,
+  "protocol_version": 1073741899,
+  "data_pack_version": 10,
+  "resource_pack_version": 9,
+  "build_time": "2022-03-24T16:12:58+00:00",
+  "release_time": "2022-03-24T16:15:02+00:00",
+  "sha1": "aa9bd63b58dcd9c82c433cc3f01595855e32af9d"
 }
