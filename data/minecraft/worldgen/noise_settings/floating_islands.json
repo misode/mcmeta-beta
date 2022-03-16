@@ -2,6 +2,7 @@
   "aquifers_enabled": false,
   "ore_veins_enabled": false,
   "legacy_random_source": true,
+  "spawn_target": [],
   "sea_level": -64,
   "disable_mob_generation": false,
   "default_fluid": {
@@ -17,7 +18,7 @@
         "argument2": {
           "argument": {
             "argument": {
-              "argument": "minecraft:overworld/sloped_cheese",
+              "argument": "minecraft:overworld/base_3d_noise",
               "type": "minecraft:slide"
             },
             "type": "minecraft:blend_density"
@@ -31,24 +32,10 @@
     "vein_toggle": 0.0,
     "vein_ridged": 0.0,
     "vein_gap": 0.0,
-    "erosion": "minecraft:overworld/erosion",
-    "depth": "minecraft:overworld/depth",
-    "ridges": "minecraft:overworld/ridges",
-    "initial_density_without_jaggedness": {
-      "argument1": 4.0,
-      "argument2": {
-        "argument": {
-          "argument1": "minecraft:overworld/depth",
-          "argument2": {
-            "argument": "minecraft:overworld/factor",
-            "type": "minecraft:cache_2d"
-          },
-          "type": "minecraft:mul"
-        },
-        "type": "minecraft:quarter_negative"
-      },
-      "type": "minecraft:mul"
-    },
+    "erosion": 0.0,
+    "depth": 0.0,
+    "ridges": 0.0,
+    "initial_density_without_jaggedness": 0.0,
     "lava": 0.0,
     "temperature": {
       "xz_scale": 0.25,
@@ -68,7 +55,7 @@
       "shift_z": "minecraft:shift_z",
       "type": "minecraft:shifted_noise"
     },
-    "continents": "minecraft:overworld/continents",
+    "continents": 0.0,
     "barrier": 0.0,
     "fluid_level_floodedness": 0.0,
     "fluid_level_spread": 0.0
@@ -218,7 +205,7 @@
                         "if_true": {
                           "noise": "minecraft:surface_swamp",
                           "min_threshold": 0.0,
-                          "max_threshold": 1.7976931348623157E308,
+                          "max_threshold": 1.7976931348623157e+308,
                           "type": "minecraft:noise_threshold"
                         },
                         "then_run": {
@@ -933,7 +920,7 @@
                               "if_true": {
                                 "noise": "minecraft:surface",
                                 "min_threshold": 0.12121212121212122,
-                                "max_threshold": 1.7976931348623157E308,
+                                "max_threshold": 1.7976931348623157e+308,
                                 "type": "minecraft:noise_threshold"
                               },
                               "then_run": {
@@ -1051,7 +1038,7 @@
                               "if_true": {
                                 "noise": "minecraft:surface",
                                 "min_threshold": 0.21212121212121213,
-                                "max_threshold": 1.7976931348623157E308,
+                                "max_threshold": 1.7976931348623157e+308,
                                 "type": "minecraft:noise_threshold"
                               },
                               "then_run": {
@@ -1066,7 +1053,7 @@
                               "if_true": {
                                 "noise": "minecraft:surface",
                                 "min_threshold": -0.06060606060606061,
-                                "max_threshold": 1.7976931348623157E308,
+                                "max_threshold": 1.7976931348623157e+308,
                                 "type": "minecraft:noise_threshold"
                               },
                               "then_run": {
@@ -1095,7 +1082,7 @@
                               "if_true": {
                                 "noise": "minecraft:surface",
                                 "min_threshold": 0.24242424242424243,
-                                "max_threshold": 1.7976931348623157E308,
+                                "max_threshold": 1.7976931348623157e+308,
                                 "type": "minecraft:noise_threshold"
                               },
                               "then_run": {
@@ -1131,7 +1118,7 @@
                               "if_true": {
                                 "noise": "minecraft:surface",
                                 "min_threshold": 0.12121212121212122,
-                                "max_threshold": 1.7976931348623157E308,
+                                "max_threshold": 1.7976931348623157e+308,
                                 "type": "minecraft:noise_threshold"
                               },
                               "then_run": {
@@ -1146,7 +1133,7 @@
                               "if_true": {
                                 "noise": "minecraft:surface",
                                 "min_threshold": -0.12121212121212122,
-                                "max_threshold": 1.7976931348623157E308,
+                                "max_threshold": 1.7976931348623157e+308,
                                 "type": "minecraft:noise_threshold"
                               },
                               "then_run": {
@@ -1226,7 +1213,7 @@
                               "if_true": {
                                 "noise": "minecraft:surface",
                                 "min_threshold": 0.21212121212121213,
-                                "max_threshold": 1.7976931348623157E308,
+                                "max_threshold": 1.7976931348623157e+308,
                                 "type": "minecraft:noise_threshold"
                               },
                               "then_run": {
@@ -1241,7 +1228,7 @@
                               "if_true": {
                                 "noise": "minecraft:surface",
                                 "min_threshold": -0.11515151515151514,
-                                "max_threshold": 1.7976931348623157E308,
+                                "max_threshold": 1.7976931348623157e+308,
                                 "type": "minecraft:noise_threshold"
                               },
                               "then_run": {
@@ -1694,7 +1681,7 @@
                               "if_true": {
                                 "noise": "minecraft:surface",
                                 "min_threshold": 0.12121212121212122,
-                                "max_threshold": 1.7976931348623157E308,
+                                "max_threshold": 1.7976931348623157e+308,
                                 "type": "minecraft:noise_threshold"
                               },
                               "then_run": {
@@ -1810,7 +1797,7 @@
                           "if_true": {
                             "noise": "minecraft:surface",
                             "min_threshold": 0.21212121212121213,
-                            "max_threshold": 1.7976931348623157E308,
+                            "max_threshold": 1.7976931348623157e+308,
                             "type": "minecraft:noise_threshold"
                           },
                           "then_run": {
@@ -1836,7 +1823,7 @@
                               "if_true": {
                                 "noise": "minecraft:surface",
                                 "min_threshold": 0.24242424242424243,
-                                "max_threshold": 1.7976931348623157E308,
+                                "max_threshold": 1.7976931348623157e+308,
                                 "type": "minecraft:noise_threshold"
                               },
                               "then_run": {
@@ -1872,7 +1859,7 @@
                               "if_true": {
                                 "noise": "minecraft:surface",
                                 "min_threshold": 0.12121212121212122,
-                                "max_threshold": 1.7976931348623157E308,
+                                "max_threshold": 1.7976931348623157e+308,
                                 "type": "minecraft:noise_threshold"
                               },
                               "then_run": {
@@ -1887,7 +1874,7 @@
                               "if_true": {
                                 "noise": "minecraft:surface",
                                 "min_threshold": -0.12121212121212122,
-                                "max_threshold": 1.7976931348623157E308,
+                                "max_threshold": 1.7976931348623157e+308,
                                 "type": "minecraft:noise_threshold"
                               },
                               "then_run": {
@@ -2123,6 +2110,11 @@
     "type": "minecraft:sequence"
   },
   "noise": {
+    "top_slide": {
+      "target": -23.4375,
+      "size": 64,
+      "offset": -46
+    },
     "bottom_slide": {
       "target": -0.234375,
       "size": 7,
@@ -2130,11 +2122,6 @@
     },
     "size_horizontal": 2,
     "size_vertical": 1,
-    "terrain_shaper": {
-      "offset": 0.0,
-      "factor": 0.0,
-      "jaggedness": 0.0
-    },
     "min_y": 0,
     "height": 256,
     "sampling": {
@@ -2142,11 +2129,6 @@
       "y_scale": 1.0,
       "xz_factor": 80.0,
       "y_factor": 160.0
-    },
-    "top_slide": {
-      "target": -23.4375,
-      "size": 64,
-      "offset": -46
     }
   },
   "default_block": {
