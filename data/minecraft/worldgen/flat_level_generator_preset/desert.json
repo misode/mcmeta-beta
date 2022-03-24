@@ -6,9 +6,9 @@
     "biome": "minecraft:desert",
     "structure_overrides": [
       "minecraft:mineshafts",
-      "minecraft:villages",
       "minecraft:desert_pyramids",
-      "minecraft:strongholds"
+      "minecraft:strongholds",
+      "minecraft:villages"
     ],
     "layers": [
       {
