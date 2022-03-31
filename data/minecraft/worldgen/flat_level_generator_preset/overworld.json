@@ -5,11 +5,11 @@
     "features": true,
     "biome": "minecraft:plains",
     "structure_overrides": [
-      "minecraft:pillager_outposts",
       "minecraft:strongholds",
+      "minecraft:villages",
       "minecraft:mineshafts",
-      "minecraft:ruined_portals",
-      "minecraft:villages"
+      "minecraft:pillager_outposts",
+      "minecraft:ruined_portals"
     ],
     "layers": [
       {
