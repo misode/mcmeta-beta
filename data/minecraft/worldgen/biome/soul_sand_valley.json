@@ -1,7 +1,4 @@
 {
-  "precipitation": "none",
-  "temperature": 2.0,
-  "downfall": 0.0,
   "effects": {
     "mood_sound": {
       "sound": "minecraft:ambient.soul_sand_valley.mood",
@@ -119,5 +116,9 @@
       "energy_budget": 0.15,
       "charge": 0.7
     }
-  }
+  },
+  "precipitation": "none",
+  "temperature": 2.0,
+  "downfall": 0.0,
+  "category": "nether"
 }

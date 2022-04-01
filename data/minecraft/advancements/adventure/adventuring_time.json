@@ -76,14 +76,6 @@
         }
       }
     },
-    "minecraft:deep_dark": {
-      "trigger": "minecraft:location",
-      "conditions": {
-        "location": {
-          "biome": "minecraft:deep_dark"
-        }
-      }
-    },
     "minecraft:deep_frozen_ocean": {
       "trigger": "minecraft:location",
       "conditions": {
@@ -450,9 +442,6 @@
     ],
     [
       "minecraft:deep_cold_ocean"
-    ],
-    [
-      "minecraft:deep_dark"
     ],
     [
       "minecraft:deep_frozen_ocean"

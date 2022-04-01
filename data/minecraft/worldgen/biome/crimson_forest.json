@@ -1,7 +1,4 @@
 {
-  "precipitation": "none",
-  "temperature": 2.0,
-  "downfall": 0.0,
   "effects": {
     "mood_sound": {
       "sound": "minecraft:ambient.crimson_forest.mood",
@@ -102,5 +99,9 @@
     "water_ambient": [],
     "misc": []
   },
-  "spawn_costs": {}
+  "spawn_costs": {},
+  "precipitation": "none",
+  "temperature": 2.0,
+  "downfall": 0.0,
+  "category": "nether"
 }

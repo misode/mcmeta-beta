@@ -1,7 +1,4 @@
 {
-  "precipitation": "rain",
-  "temperature": 0.5,
-  "downfall": 0.5,
   "effects": {
     "mood_sound": {
       "sound": "minecraft:ambient.cave",
@@ -180,5 +177,9 @@
     ],
     "misc": []
   },
-  "spawn_costs": {}
+  "spawn_costs": {},
+  "precipitation": "rain",
+  "temperature": 0.5,
+  "downfall": 0.5,
+  "category": "underground"
 }

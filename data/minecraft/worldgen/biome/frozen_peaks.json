@@ -1,7 +1,4 @@
 {
-  "precipitation": "snow",
-  "temperature": -0.7,
-  "downfall": 0.9,
   "effects": {
     "mood_sound": {
       "sound": "minecraft:ambient.cave",
@@ -168,5 +165,9 @@
     "water_ambient": [],
     "misc": []
   },
-  "spawn_costs": {}
+  "spawn_costs": {},
+  "precipitation": "snow",
+  "temperature": -0.7,
+  "downfall": 0.9,
+  "category": "mountain"
 }

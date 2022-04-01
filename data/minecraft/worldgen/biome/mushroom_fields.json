@@ -1,7 +1,4 @@
 {
-  "precipitation": "rain",
-  "temperature": 0.9,
-  "downfall": 1.0,
   "effects": {
     "mood_sound": {
       "sound": "minecraft:ambient.cave",
@@ -114,5 +111,9 @@
     "water_ambient": [],
     "misc": []
   },
-  "spawn_costs": {}
+  "spawn_costs": {},
+  "precipitation": "rain",
+  "temperature": 0.9,
+  "downfall": 1.0,
+  "category": "mushroom"
 }
