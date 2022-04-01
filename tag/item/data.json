@@ -10,7 +10,7 @@
   "boats",
   "buttons",
   "candles",
-  "chest_boats",
+  "carpets",
   "cluster_max_harvestables",
   "coal_ores",
   "coals",
@@ -36,7 +36,6 @@
   "lectern_books",
   "logs",
   "logs_that_burn",
-  "mangrove_logs",
   "music_discs",
   "non_flammable_wood",
   "oak_logs",
@@ -70,6 +69,5 @@
   "wooden_slabs",
   "wooden_stairs",
   "wooden_trapdoors",
-  "wool",
-  "wool_carpets"
+  "wool"
 ]

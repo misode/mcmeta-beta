@@ -3,13 +3,9 @@
   "avoid",
   "celebrate",
   "core",
-  "dig",
-  "emerge",
   "fight",
   "hide",
   "idle",
-  "investigate",
-  "lay_spawn",
   "long_jump",
   "meet",
   "panic",
@@ -20,9 +16,5 @@
   "ram",
   "rest",
   "ride",
-  "roar",
-  "sniff",
-  "swim",
-  "tongue",
   "work"
 ]

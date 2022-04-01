@@ -2,13 +2,10 @@
   "axolotl_attackables",
   "axolotl_temptations",
   "dummy",
-  "frog_attackables",
-  "frog_temptations",
   "goat_temptations",
   "golem_detected",
   "hoglin_specific_sensor",
   "hurt_by",
-  "is_in_water",
   "nearest_adult",
   "nearest_bed",
   "nearest_items",
@@ -18,6 +15,5 @@
   "piglin_specific_sensor",
   "secondary_pois",
   "villager_babies",
-  "villager_hostiles",
-  "warden_entity_sensor"
+  "villager_hostiles"
 ]

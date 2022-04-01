@@ -26,9 +26,11 @@
   "shift_a",
   "shift_b",
   "shifted_noise",
+  "slide",
   "spline",
   "square",
   "squeeze",
+  "terrain_shaper_spline",
   "weird_scaled_sampler",
   "y_clamped_gradient"
 ]

@@ -1,5 +1,4 @@
 [
-  "allay_dust",
   "ambient_entity_effect",
   "angry_villager",
   "ash",
@@ -48,6 +47,7 @@
   "fishing",
   "flame",
   "flash",
+  "footstep",
   "glow",
   "glow_squid_ink",
   "happy_villager",
@@ -72,7 +72,6 @@
   "sculk_charge",
   "sculk_charge_pop",
   "sculk_soul",
-  "shriek",
   "small_flame",
   "smoke",
   "sneeze",
