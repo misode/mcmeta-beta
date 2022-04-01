@@ -2,56 +2,6 @@
   "aquifers_enabled": true,
   "ore_veins_enabled": true,
   "legacy_random_source": false,
-  "spawn_target": [
-    {
-      "erosion": [
-        -1.0,
-        1.0
-      ],
-      "depth": 0.0,
-      "weirdness": [
-        -1.0,
-        -0.16
-      ],
-      "offset": 0.0,
-      "temperature": [
-        -1.0,
-        1.0
-      ],
-      "humidity": [
-        -1.0,
-        1.0
-      ],
-      "continentalness": [
-        -0.11,
-        1.0
-      ]
-    },
-    {
-      "erosion": [
-        -1.0,
-        1.0
-      ],
-      "depth": 0.0,
-      "weirdness": [
-        0.16,
-        1.0
-      ],
-      "offset": 0.0,
-      "temperature": [
-        -1.0,
-        1.0
-      ],
-      "humidity": [
-        -1.0,
-        1.0
-      ],
-      "continentalness": [
-        -0.11,
-        1.0
-      ]
-    }
-  ],
   "sea_level": 63,
   "disable_mob_generation": false,
   "default_fluid": {
@@ -68,126 +18,93 @@
           "argument2": {
             "argument": {
               "argument": {
-                "argument1": 0.4,
-                "argument2": {
-                  "argument1": {
-                    "from_y": -64,
-                    "to_y": -40,
-                    "from_value": 0.0,
-                    "to_value": 1.0,
-                    "type": "minecraft:y_clamped_gradient"
-                  },
-                  "argument2": {
-                    "argument1": -0.4,
+                "argument": {
+                  "max_exclusive": 1.5625,
+                  "when_in_range": {
+                    "argument1": "minecraft:overworld/sloped_cheese",
                     "argument2": {
-                      "argument1": -0.078125,
-                      "argument2": {
+                      "argument1": 5.0,
+                      "argument2": "minecraft:overworld/caves/entrances",
+                      "type": "minecraft:mul"
+                    },
+                    "type": "minecraft:min"
+                  },
+                  "when_out_of_range": {
+                    "argument1": {
+                      "argument1": {
                         "argument1": {
-                          "from_y": 304,
-                          "to_y": 320,
-                          "from_value": 1.0,
-                          "to_value": 0.0,
-                          "type": "minecraft:y_clamped_gradient"
-                        },
-                        "argument2": {
-                          "argument1": 0.078125,
+                          "argument1": {
+                            "argument1": 4.0,
+                            "argument2": {
+                              "argument": {
+                                "noise": "minecraft:cave_layer",
+                                "xz_scale": 1.0,
+                                "y_scale": 8.0,
+                                "type": "minecraft:noise"
+                              },
+                              "type": "minecraft:square"
+                            },
+                            "type": "minecraft:mul"
+                          },
                           "argument2": {
-                            "max_exclusive": 1.5625,
-                            "when_in_range": {
-                              "argument1": "minecraft:overworld_amplified/sloped_cheese",
-                              "argument2": {
-                                "argument1": 5.0,
-                                "argument2": "minecraft:overworld/caves/entrances",
-                                "type": "minecraft:mul"
-                              },
-                              "type": "minecraft:min"
-                            },
-                            "when_out_of_range": {
-                              "argument1": {
-                                "argument1": {
-                                  "argument1": {
-                                    "argument1": {
-                                      "argument1": 4.0,
-                                      "argument2": {
-                                        "argument": {
-                                          "noise": "minecraft:cave_layer",
-                                          "xz_scale": 1.0,
-                                          "y_scale": 8.0,
-                                          "type": "minecraft:noise"
-                                        },
-                                        "type": "minecraft:square"
-                                      },
-                                      "type": "minecraft:mul"
-                                    },
-                                    "argument2": {
-                                      "argument1": {
-                                        "input": {
-                                          "argument1": 0.27,
-                                          "argument2": {
-                                            "noise": "minecraft:cave_cheese",
-                                            "xz_scale": 1.0,
-                                            "y_scale": 0.6666666666666666,
-                                            "type": "minecraft:noise"
-                                          },
-                                          "type": "minecraft:add"
-                                        },
-                                        "min": -1.0,
-                                        "max": 1.0,
-                                        "type": "minecraft:clamp"
-                                      },
-                                      "argument2": {
-                                        "input": {
-                                          "argument1": 1.5,
-                                          "argument2": {
-                                            "argument1": -0.64,
-                                            "argument2": "minecraft:overworld_amplified/sloped_cheese",
-                                            "type": "minecraft:mul"
-                                          },
-                                          "type": "minecraft:add"
-                                        },
-                                        "min": 0.0,
-                                        "max": 0.5,
-                                        "type": "minecraft:clamp"
-                                      },
-                                      "type": "minecraft:add"
-                                    },
-                                    "type": "minecraft:add"
-                                  },
-                                  "argument2": "minecraft:overworld/caves/entrances",
-                                  "type": "minecraft:min"
-                                },
+                            "argument1": {
+                              "input": {
+                                "argument1": 0.27,
                                 "argument2": {
-                                  "argument1": "minecraft:overworld/caves/spaghetti_2d",
-                                  "argument2": "minecraft:overworld/caves/spaghetti_roughness_function",
-                                  "type": "minecraft:add"
+                                  "noise": "minecraft:cave_cheese",
+                                  "xz_scale": 1.0,
+                                  "y_scale": 0.6666666666666666,
+                                  "type": "minecraft:noise"
                                 },
-                                "type": "minecraft:min"
+                                "type": "minecraft:add"
                               },
-                              "argument2": {
-                                "max_exclusive": 0.03,
-                                "when_in_range": -1000000.0,
-                                "when_out_of_range": "minecraft:overworld/caves/pillars",
-                                "input": "minecraft:overworld/caves/pillars",
-                                "min_inclusive": -1000000.0,
-                                "type": "minecraft:range_choice"
-                              },
-                              "type": "minecraft:max"
+                              "min": -1.0,
+                              "max": 1.0,
+                              "type": "minecraft:clamp"
                             },
-                            "input": "minecraft:overworld_amplified/sloped_cheese",
-                            "min_inclusive": -1000000.0,
-                            "type": "minecraft:range_choice"
+                            "argument2": {
+                              "input": {
+                                "argument1": 1.5,
+                                "argument2": {
+                                  "argument1": -0.64,
+                                  "argument2": "minecraft:overworld/sloped_cheese",
+                                  "type": "minecraft:mul"
+                                },
+                                "type": "minecraft:add"
+                              },
+                              "min": 0.0,
+                              "max": 0.5,
+                              "type": "minecraft:clamp"
+                            },
+                            "type": "minecraft:add"
                           },
                           "type": "minecraft:add"
                         },
-                        "type": "minecraft:mul"
+                        "argument2": "minecraft:overworld/caves/entrances",
+                        "type": "minecraft:min"
                       },
-                      "type": "minecraft:add"
+                      "argument2": {
+                        "argument1": "minecraft:overworld/caves/spaghetti_2d",
+                        "argument2": "minecraft:overworld/caves/spaghetti_roughness_function",
+                        "type": "minecraft:add"
+                      },
+                      "type": "minecraft:min"
                     },
-                    "type": "minecraft:add"
+                    "argument2": {
+                      "max_exclusive": 0.03,
+                      "when_in_range": -1000000.0,
+                      "when_out_of_range": "minecraft:overworld/caves/pillars",
+                      "input": "minecraft:overworld/caves/pillars",
+                      "min_inclusive": -1000000.0,
+                      "type": "minecraft:range_choice"
+                    },
+                    "type": "minecraft:max"
                   },
-                  "type": "minecraft:mul"
+                  "input": "minecraft:overworld/sloped_cheese",
+                  "min_inclusive": -1000000.0,
+                  "type": "minecraft:range_choice"
                 },
-                "type": "minecraft:add"
+                "type": "minecraft:slide"
               },
               "type": "minecraft:blend_density"
             },
@@ -268,67 +185,22 @@
       "type": "minecraft:noise"
     },
     "erosion": "minecraft:overworld/erosion",
-    "depth": "minecraft:overworld_amplified/depth",
+    "depth": "minecraft:overworld/depth",
     "ridges": "minecraft:overworld/ridges",
     "initial_density_without_jaggedness": {
-      "argument1": 0.4,
+      "argument1": 4.0,
       "argument2": {
-        "argument1": {
-          "from_y": -64,
-          "to_y": -40,
-          "from_value": 0.0,
-          "to_value": 1.0,
-          "type": "minecraft:y_clamped_gradient"
-        },
-        "argument2": {
-          "argument1": -0.4,
+        "argument": {
+          "argument1": "minecraft:overworld/depth",
           "argument2": {
-            "argument1": -0.078125,
-            "argument2": {
-              "argument1": {
-                "from_y": 304,
-                "to_y": 320,
-                "from_value": 1.0,
-                "to_value": 0.0,
-                "type": "minecraft:y_clamped_gradient"
-              },
-              "argument2": {
-                "argument1": 0.078125,
-                "argument2": {
-                  "input": {
-                    "argument1": -0.703125,
-                    "argument2": {
-                      "argument1": 4.0,
-                      "argument2": {
-                        "argument": {
-                          "argument1": "minecraft:overworld_amplified/depth",
-                          "argument2": {
-                            "argument": "minecraft:overworld_amplified/factor",
-                            "type": "minecraft:cache_2d"
-                          },
-                          "type": "minecraft:mul"
-                        },
-                        "type": "minecraft:quarter_negative"
-                      },
-                      "type": "minecraft:mul"
-                    },
-                    "type": "minecraft:add"
-                  },
-                  "min": -64.0,
-                  "max": 64.0,
-                  "type": "minecraft:clamp"
-                },
-                "type": "minecraft:add"
-              },
-              "type": "minecraft:mul"
-            },
-            "type": "minecraft:add"
+            "argument": "minecraft:overworld/factor",
+            "type": "minecraft:cache_2d"
           },
-          "type": "minecraft:add"
+          "type": "minecraft:mul"
         },
-        "type": "minecraft:mul"
+        "type": "minecraft:quarter_negative"
       },
-      "type": "minecraft:add"
+      "type": "minecraft:mul"
     },
     "lava": {
       "noise": "minecraft:aquifer_lava",
@@ -2449,10 +2321,2653 @@
     "type": "minecraft:sequence"
   },
   "noise": {
+    "bottom_slide": {
+      "target": 0.4,
+      "size": 3,
+      "offset": 0
+    },
+    "size_horizontal": 1,
+    "size_vertical": 2,
+    "terrain_shaper": {
+      "offset": {
+        "coordinate": "continents",
+        "points": [
+          {
+            "location": -1.1,
+            "value": 0.088,
+            "derivative": 0.0
+          },
+          {
+            "location": -1.02,
+            "value": -0.2222,
+            "derivative": 0.0
+          },
+          {
+            "location": -0.51,
+            "value": -0.2222,
+            "derivative": 0.0
+          },
+          {
+            "location": -0.44,
+            "value": -0.12,
+            "derivative": 0.0
+          },
+          {
+            "location": -0.18,
+            "value": -0.12,
+            "derivative": 0.0
+          },
+          {
+            "location": -0.16,
+            "value": {
+              "coordinate": "erosion",
+              "points": [
+                {
+                  "location": -0.85,
+                  "value": {
+                    "coordinate": "ridges",
+                    "points": [
+                      {
+                        "location": -1.0,
+                        "value": -0.08880186,
+                        "derivative": 0.38940096
+                      },
+                      {
+                        "location": 1.0,
+                        "value": 1.3800001,
+                        "derivative": 0.38940096
+                      }
+                    ]
+                  },
+                  "derivative": 0.0
+                },
+                {
+                  "location": -0.7,
+                  "value": {
+                    "coordinate": "ridges",
+                    "points": [
+                      {
+                        "location": -1.0,
+                        "value": -0.115760356,
+                        "derivative": 0.37788022
+                      },
+                      {
+                        "location": 1.0,
+                        "value": 1.2800002,
+                        "derivative": 0.37788022
+                      }
+                    ]
+                  },
+                  "derivative": 0.0
+                },
+                {
+                  "location": -0.4,
+                  "value": {
+                    "coordinate": "ridges",
+                    "points": [
+                      {
+                        "location": -1.0,
+                        "value": -0.2222,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": -0.75,
+                        "value": -0.2222,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": -0.65,
+                        "value": 0.0,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 0.5954547,
+                        "value": 5.9604645e-08,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 0.6054547,
+                        "value": 5.9604645e-08,
+                        "derivative": 0.2534563
+                      },
+                      {
+                        "location": 1.0,
+                        "value": 0.20000005,
+                        "derivative": 0.2534563
+                      }
+                    ]
+                  },
+                  "derivative": 0.0
+                },
+                {
+                  "location": -0.35,
+                  "value": {
+                    "coordinate": "ridges",
+                    "points": [
+                      {
+                        "location": -1.0,
+                        "value": -0.3,
+                        "derivative": 0.5
+                      },
+                      {
+                        "location": -0.4,
+                        "value": 0.1,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 0.0,
+                        "value": 0.1,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 0.4,
+                        "value": 0.1,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 1.0,
+                        "value": 0.120000005,
+                        "derivative": 0.007000001
+                      }
+                    ]
+                  },
+                  "derivative": 0.0
+                },
+                {
+                  "location": -0.1,
+                  "value": {
+                    "coordinate": "ridges",
+                    "points": [
+                      {
+                        "location": -1.0,
+                        "value": -0.15,
+                        "derivative": 0.5
+                      },
+                      {
+                        "location": -0.4,
+                        "value": 0.0,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 0.0,
+                        "value": 0.0,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 0.4,
+                        "value": 0.1,
+                        "derivative": 0.1
+                      },
+                      {
+                        "location": 1.0,
+                        "value": 0.120000005,
+                        "derivative": 0.007000001
+                      }
+                    ]
+                  },
+                  "derivative": 0.0
+                },
+                {
+                  "location": 0.2,
+                  "value": {
+                    "coordinate": "ridges",
+                    "points": [
+                      {
+                        "location": -1.0,
+                        "value": -0.15,
+                        "derivative": 0.5
+                      },
+                      {
+                        "location": -0.4,
+                        "value": 0.0,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 0.0,
+                        "value": 0.0,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 0.4,
+                        "value": 0.0,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 1.0,
+                        "value": 0.0,
+                        "derivative": 0.0
+                      }
+                    ]
+                  },
+                  "derivative": 0.0
+                },
+                {
+                  "location": 0.7,
+                  "value": {
+                    "coordinate": "ridges",
+                    "points": [
+                      {
+                        "location": -1.0,
+                        "value": -0.02,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": -0.4,
+                        "value": -0.03,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 0.0,
+                        "value": -0.03,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 0.4,
+                        "value": 0.0,
+                        "derivative": 0.06
+                      },
+                      {
+                        "location": 1.0,
+                        "value": 0.0,
+                        "derivative": 0.0
+                      }
+                    ]
+                  },
+                  "derivative": 0.0
+                }
+              ]
+            },
+            "derivative": 0.0
+          },
+          {
+            "location": -0.15,
+            "value": {
+              "coordinate": "erosion",
+              "points": [
+                {
+                  "location": -0.85,
+                  "value": {
+                    "coordinate": "ridges",
+                    "points": [
+                      {
+                        "location": -1.0,
+                        "value": -0.08880186,
+                        "derivative": 0.38940096
+                      },
+                      {
+                        "location": 1.0,
+                        "value": 1.3800001,
+                        "derivative": 0.38940096
+                      }
+                    ]
+                  },
+                  "derivative": 0.0
+                },
+                {
+                  "location": -0.7,
+                  "value": {
+                    "coordinate": "ridges",
+                    "points": [
+                      {
+                        "location": -1.0,
+                        "value": -0.115760356,
+                        "derivative": 0.37788022
+                      },
+                      {
+                        "location": 1.0,
+                        "value": 1.2800002,
+                        "derivative": 0.37788022
+                      }
+                    ]
+                  },
+                  "derivative": 0.0
+                },
+                {
+                  "location": -0.4,
+                  "value": {
+                    "coordinate": "ridges",
+                    "points": [
+                      {
+                        "location": -1.0,
+                        "value": -0.2222,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": -0.75,
+                        "value": -0.2222,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": -0.65,
+                        "value": 0.0,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 0.5954547,
+                        "value": 5.9604645e-08,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 0.6054547,
+                        "value": 5.9604645e-08,
+                        "derivative": 0.2534563
+                      },
+                      {
+                        "location": 1.0,
+                        "value": 0.20000005,
+                        "derivative": 0.2534563
+                      }
+                    ]
+                  },
+                  "derivative": 0.0
+                },
+                {
+                  "location": -0.35,
+                  "value": {
+                    "coordinate": "ridges",
+                    "points": [
+                      {
+                        "location": -1.0,
+                        "value": -0.3,
+                        "derivative": 0.5
+                      },
+                      {
+                        "location": -0.4,
+                        "value": 0.1,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 0.0,
+                        "value": 0.1,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 0.4,
+                        "value": 0.1,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 1.0,
+                        "value": 0.120000005,
+                        "derivative": 0.007000001
+                      }
+                    ]
+                  },
+                  "derivative": 0.0
+                },
+                {
+                  "location": -0.1,
+                  "value": {
+                    "coordinate": "ridges",
+                    "points": [
+                      {
+                        "location": -1.0,
+                        "value": -0.15,
+                        "derivative": 0.5
+                      },
+                      {
+                        "location": -0.4,
+                        "value": 0.0,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 0.0,
+                        "value": 0.0,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 0.4,
+                        "value": 0.1,
+                        "derivative": 0.1
+                      },
+                      {
+                        "location": 1.0,
+                        "value": 0.120000005,
+                        "derivative": 0.007000001
+                      }
+                    ]
+                  },
+                  "derivative": 0.0
+                },
+                {
+                  "location": 0.2,
+                  "value": {
+                    "coordinate": "ridges",
+                    "points": [
+                      {
+                        "location": -1.0,
+                        "value": -0.15,
+                        "derivative": 0.5
+                      },
+                      {
+                        "location": -0.4,
+                        "value": 0.0,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 0.0,
+                        "value": 0.0,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 0.4,
+                        "value": 0.0,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 1.0,
+                        "value": 0.0,
+                        "derivative": 0.0
+                      }
+                    ]
+                  },
+                  "derivative": 0.0
+                },
+                {
+                  "location": 0.7,
+                  "value": {
+                    "coordinate": "ridges",
+                    "points": [
+                      {
+                        "location": -1.0,
+                        "value": -0.02,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": -0.4,
+                        "value": -0.03,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 0.0,
+                        "value": -0.03,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 0.4,
+                        "value": 0.0,
+                        "derivative": 0.06
+                      },
+                      {
+                        "location": 1.0,
+                        "value": 0.0,
+                        "derivative": 0.0
+                      }
+                    ]
+                  },
+                  "derivative": 0.0
+                }
+              ]
+            },
+            "derivative": 0.0
+          },
+          {
+            "location": -0.1,
+            "value": {
+              "coordinate": "erosion",
+              "points": [
+                {
+                  "location": -0.85,
+                  "value": {
+                    "coordinate": "ridges",
+                    "points": [
+                      {
+                        "location": -1.0,
+                        "value": -0.08880186,
+                        "derivative": 0.38940096
+                      },
+                      {
+                        "location": 1.0,
+                        "value": 1.3800001,
+                        "derivative": 0.38940096
+                      }
+                    ]
+                  },
+                  "derivative": 0.0
+                },
+                {
+                  "location": -0.7,
+                  "value": {
+                    "coordinate": "ridges",
+                    "points": [
+                      {
+                        "location": -1.0,
+                        "value": -0.115760356,
+                        "derivative": 0.37788022
+                      },
+                      {
+                        "location": 1.0,
+                        "value": 1.2800002,
+                        "derivative": 0.37788022
+                      }
+                    ]
+                  },
+                  "derivative": 0.0
+                },
+                {
+                  "location": -0.4,
+                  "value": {
+                    "coordinate": "ridges",
+                    "points": [
+                      {
+                        "location": -1.0,
+                        "value": -0.2222,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": -0.75,
+                        "value": -0.2222,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": -0.65,
+                        "value": 0.0,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 0.5954547,
+                        "value": 5.9604645e-08,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 0.6054547,
+                        "value": 5.9604645e-08,
+                        "derivative": 0.2534563
+                      },
+                      {
+                        "location": 1.0,
+                        "value": 0.20000005,
+                        "derivative": 0.2534563
+                      }
+                    ]
+                  },
+                  "derivative": 0.0
+                },
+                {
+                  "location": -0.35,
+                  "value": {
+                    "coordinate": "ridges",
+                    "points": [
+                      {
+                        "location": -1.0,
+                        "value": -0.25,
+                        "derivative": 0.5
+                      },
+                      {
+                        "location": -0.4,
+                        "value": 0.1,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 0.0,
+                        "value": 0.1,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 0.4,
+                        "value": 0.1,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 1.0,
+                        "value": 0.120000005,
+                        "derivative": 0.007000001
+                      }
+                    ]
+                  },
+                  "derivative": 0.0
+                },
+                {
+                  "location": -0.1,
+                  "value": {
+                    "coordinate": "ridges",
+                    "points": [
+                      {
+                        "location": -1.0,
+                        "value": -0.1,
+                        "derivative": 0.5
+                      },
+                      {
+                        "location": -0.4,
+                        "value": 0.002,
+                        "derivative": 0.01
+                      },
+                      {
+                        "location": 0.0,
+                        "value": 0.006,
+                        "derivative": 0.01
+                      },
+                      {
+                        "location": 0.4,
+                        "value": 0.1,
+                        "derivative": 0.094000004
+                      },
+                      {
+                        "location": 1.0,
+                        "value": 0.120000005,
+                        "derivative": 0.007000001
+                      }
+                    ]
+                  },
+                  "derivative": 0.0
+                },
+                {
+                  "location": 0.2,
+                  "value": {
+                    "coordinate": "ridges",
+                    "points": [
+                      {
+                        "location": -1.0,
+                        "value": -0.1,
+                        "derivative": 0.5
+                      },
+                      {
+                        "location": -0.4,
+                        "value": 0.02,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 0.0,
+                        "value": 0.02,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 0.4,
+                        "value": 0.06,
+                        "derivative": 0.04
+                      },
+                      {
+                        "location": 1.0,
+                        "value": 0.2,
+                        "derivative": 0.049
+                      }
+                    ]
+                  },
+                  "derivative": 0.0
+                },
+                {
+                  "location": 0.7,
+                  "value": {
+                    "coordinate": "ridges",
+                    "points": [
+                      {
+                        "location": -1.0,
+                        "value": -0.02,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": -0.4,
+                        "value": -0.03,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 0.0,
+                        "value": -0.03,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 0.4,
+                        "value": 0.06,
+                        "derivative": 0.12
+                      },
+                      {
+                        "location": 1.0,
+                        "value": 0.2,
+                        "derivative": 0.049
+                      }
+                    ]
+                  },
+                  "derivative": 0.0
+                }
+              ]
+            },
+            "derivative": 0.0
+          },
+          {
+            "location": 0.25,
+            "value": {
+              "coordinate": "erosion",
+              "points": [
+                {
+                  "location": -0.85,
+                  "value": {
+                    "coordinate": "ridges",
+                    "points": [
+                      {
+                        "location": -1.0,
+                        "value": 0.40470043,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 0.0,
+                        "value": 1.4323502,
+                        "derivative": 0.5138249
+                      },
+                      {
+                        "location": 1.0,
+                        "value": 2.46,
+                        "derivative": 0.5138249
+                      }
+                    ]
+                  },
+                  "derivative": 0.0
+                },
+                {
+                  "location": -0.7,
+                  "value": {
+                    "coordinate": "ridges",
+                    "points": [
+                      {
+                        "location": -1.0,
+                        "value": 0.4,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 0.0,
+                        "value": 0.8936405,
+                        "derivative": 0.43317974
+                      },
+                      {
+                        "location": 1.0,
+                        "value": 1.76,
+                        "derivative": 0.43317974
+                      }
+                    ]
+                  },
+                  "derivative": 0.0
+                },
+                {
+                  "location": -0.4,
+                  "value": {
+                    "coordinate": "ridges",
+                    "points": [
+                      {
+                        "location": -1.0,
+                        "value": 0.4,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 0.0,
+                        "value": 0.6165899,
+                        "derivative": 0.3917051
+                      },
+                      {
+                        "location": 1.0,
+                        "value": 1.4000001,
+                        "derivative": 0.3917051
+                      }
+                    ]
+                  },
+                  "derivative": 0.0
+                },
+                {
+                  "location": -0.35,
+                  "value": {
+                    "coordinate": "ridges",
+                    "points": [
+                      {
+                        "location": -1.0,
+                        "value": -0.25,
+                        "derivative": 0.5
+                      },
+                      {
+                        "location": -0.4,
+                        "value": 0.7,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 0.0,
+                        "value": 0.7,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 0.4,
+                        "value": 0.7,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 1.0,
+                        "value": 0.84000003,
+                        "derivative": 0.049000014
+                      }
+                    ]
+                  },
+                  "derivative": 0.0
+                },
+                {
+                  "location": -0.1,
+                  "value": {
+                    "coordinate": "ridges",
+                    "points": [
+                      {
+                        "location": -1.0,
+                        "value": -0.1,
+                        "derivative": 0.5
+                      },
+                      {
+                        "location": -0.4,
+                        "value": 0.0139999995,
+                        "derivative": 0.07
+                      },
+                      {
+                        "location": 0.0,
+                        "value": 0.042,
+                        "derivative": 0.07
+                      },
+                      {
+                        "location": 0.4,
+                        "value": 0.7,
+                        "derivative": 0.658
+                      },
+                      {
+                        "location": 1.0,
+                        "value": 0.84000003,
+                        "derivative": 0.049000014
+                      }
+                    ]
+                  },
+                  "derivative": 0.0
+                },
+                {
+                  "location": 0.2,
+                  "value": {
+                    "coordinate": "ridges",
+                    "points": [
+                      {
+                        "location": -1.0,
+                        "value": -0.1,
+                        "derivative": 0.5
+                      },
+                      {
+                        "location": -0.4,
+                        "value": 0.02,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 0.0,
+                        "value": 0.02,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 0.4,
+                        "value": 0.06,
+                        "derivative": 0.04
+                      },
+                      {
+                        "location": 1.0,
+                        "value": 0.2,
+                        "derivative": 0.049
+                      }
+                    ]
+                  },
+                  "derivative": 0.0
+                },
+                {
+                  "location": 0.4,
+                  "value": {
+                    "coordinate": "ridges",
+                    "points": [
+                      {
+                        "location": -1.0,
+                        "value": -0.1,
+                        "derivative": 0.5
+                      },
+                      {
+                        "location": -0.4,
+                        "value": 0.02,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 0.0,
+                        "value": 0.02,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 0.4,
+                        "value": 0.06,
+                        "derivative": 0.04
+                      },
+                      {
+                        "location": 1.0,
+                        "value": 0.2,
+                        "derivative": 0.049
+                      }
+                    ]
+                  },
+                  "derivative": 0.0
+                },
+                {
+                  "location": 0.45,
+                  "value": {
+                    "coordinate": "ridges",
+                    "points": [
+                      {
+                        "location": -1.0,
+                        "value": -0.1,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": -0.4,
+                        "value": {
+                          "coordinate": "ridges",
+                          "points": [
+                            {
+                              "location": -1.0,
+                              "value": -0.1,
+                              "derivative": 0.5
+                            },
+                            {
+                              "location": -0.4,
+                              "value": 0.02,
+                              "derivative": 0.0
+                            },
+                            {
+                              "location": 0.0,
+                              "value": 0.02,
+                              "derivative": 0.0
+                            },
+                            {
+                              "location": 0.4,
+                              "value": 0.06,
+                              "derivative": 0.04
+                            },
+                            {
+                              "location": 1.0,
+                              "value": 0.2,
+                              "derivative": 0.049
+                            }
+                          ]
+                        },
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 0.0,
+                        "value": 0.34,
+                        "derivative": 0.0
+                      }
+                    ]
+                  },
+                  "derivative": 0.0
+                },
+                {
+                  "location": 0.55,
+                  "value": {
+                    "coordinate": "ridges",
+                    "points": [
+                      {
+                        "location": -1.0,
+                        "value": -0.1,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": -0.4,
+                        "value": {
+                          "coordinate": "ridges",
+                          "points": [
+                            {
+                              "location": -1.0,
+                              "value": -0.1,
+                              "derivative": 0.5
+                            },
+                            {
+                              "location": -0.4,
+                              "value": 0.02,
+                              "derivative": 0.0
+                            },
+                            {
+                              "location": 0.0,
+                              "value": 0.02,
+                              "derivative": 0.0
+                            },
+                            {
+                              "location": 0.4,
+                              "value": 0.06,
+                              "derivative": 0.04
+                            },
+                            {
+                              "location": 1.0,
+                              "value": 0.2,
+                              "derivative": 0.049
+                            }
+                          ]
+                        },
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 0.0,
+                        "value": 0.34,
+                        "derivative": 0.0
+                      }
+                    ]
+                  },
+                  "derivative": 0.0
+                },
+                {
+                  "location": 0.58,
+                  "value": {
+                    "coordinate": "ridges",
+                    "points": [
+                      {
+                        "location": -1.0,
+                        "value": -0.1,
+                        "derivative": 0.5
+                      },
+                      {
+                        "location": -0.4,
+                        "value": 0.02,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 0.0,
+                        "value": 0.02,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 0.4,
+                        "value": 0.06,
+                        "derivative": 0.04
+                      },
+                      {
+                        "location": 1.0,
+                        "value": 0.2,
+                        "derivative": 0.049
+                      }
+                    ]
+                  },
+                  "derivative": 0.0
+                },
+                {
+                  "location": 0.7,
+                  "value": {
+                    "coordinate": "ridges",
+                    "points": [
+                      {
+                        "location": -1.0,
+                        "value": -0.02,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": -0.4,
+                        "value": -0.03,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 0.0,
+                        "value": -0.03,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 0.4,
+                        "value": 0.06,
+                        "derivative": 0.12
+                      },
+                      {
+                        "location": 1.0,
+                        "value": 0.2,
+                        "derivative": 0.049
+                      }
+                    ]
+                  },
+                  "derivative": 0.0
+                }
+              ]
+            },
+            "derivative": 0.0
+          },
+          {
+            "location": 1.0,
+            "value": {
+              "coordinate": "erosion",
+              "points": [
+                {
+                  "location": -0.85,
+                  "value": {
+                    "coordinate": "ridges",
+                    "points": [
+                      {
+                        "location": -1.0,
+                        "value": 0.6958525,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 0.0,
+                        "value": 1.8479263,
+                        "derivative": 0.5760369
+                      },
+                      {
+                        "location": 1.0,
+                        "value": 3.0,
+                        "derivative": 0.5760369
+                      }
+                    ]
+                  },
+                  "derivative": 0.0
+                },
+                {
+                  "location": -0.7,
+                  "value": {
+                    "coordinate": "ridges",
+                    "points": [
+                      {
+                        "location": -1.0,
+                        "value": 0.4,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 0.0,
+                        "value": 1.078341,
+                        "derivative": 0.4608295
+                      },
+                      {
+                        "location": 1.0,
+                        "value": 2.0,
+                        "derivative": 0.4608295
+                      }
+                    ]
+                  },
+                  "derivative": 0.0
+                },
+                {
+                  "location": -0.4,
+                  "value": {
+                    "coordinate": "ridges",
+                    "points": [
+                      {
+                        "location": -1.0,
+                        "value": 0.4,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 0.0,
+                        "value": 1.078341,
+                        "derivative": 0.4608295
+                      },
+                      {
+                        "location": 1.0,
+                        "value": 2.0,
+                        "derivative": 0.4608295
+                      }
+                    ]
+                  },
+                  "derivative": 0.0
+                },
+                {
+                  "location": -0.35,
+                  "value": {
+                    "coordinate": "ridges",
+                    "points": [
+                      {
+                        "location": -1.0,
+                        "value": -0.2,
+                        "derivative": 0.5
+                      },
+                      {
+                        "location": -0.4,
+                        "value": 1.0,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 0.0,
+                        "value": 1.0,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 0.4,
+                        "value": 1.0,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 1.0,
+                        "value": 1.2,
+                        "derivative": 0.070000015
+                      }
+                    ]
+                  },
+                  "derivative": 0.0
+                },
+                {
+                  "location": -0.1,
+                  "value": {
+                    "coordinate": "ridges",
+                    "points": [
+                      {
+                        "location": -1.0,
+                        "value": -0.05,
+                        "derivative": 0.5
+                      },
+                      {
+                        "location": -0.4,
+                        "value": 0.02,
+                        "derivative": 0.099999994
+                      },
+                      {
+                        "location": 0.0,
+                        "value": 0.06,
+                        "derivative": 0.099999994
+                      },
+                      {
+                        "location": 0.4,
+                        "value": 1.0,
+                        "derivative": 0.94
+                      },
+                      {
+                        "location": 1.0,
+                        "value": 1.2,
+                        "derivative": 0.070000015
+                      }
+                    ]
+                  },
+                  "derivative": 0.0
+                },
+                {
+                  "location": 0.2,
+                  "value": {
+                    "coordinate": "ridges",
+                    "points": [
+                      {
+                        "location": -1.0,
+                        "value": -0.05,
+                        "derivative": 0.5
+                      },
+                      {
+                        "location": -0.4,
+                        "value": 0.02,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 0.0,
+                        "value": 0.02,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 0.4,
+                        "value": 0.06,
+                        "derivative": 0.04
+                      },
+                      {
+                        "location": 1.0,
+                        "value": 0.2,
+                        "derivative": 0.049
+                      }
+                    ]
+                  },
+                  "derivative": 0.0
+                },
+                {
+                  "location": 0.4,
+                  "value": {
+                    "coordinate": "ridges",
+                    "points": [
+                      {
+                        "location": -1.0,
+                        "value": -0.05,
+                        "derivative": 0.5
+                      },
+                      {
+                        "location": -0.4,
+                        "value": 0.02,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 0.0,
+                        "value": 0.02,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 0.4,
+                        "value": 0.06,
+                        "derivative": 0.04
+                      },
+                      {
+                        "location": 1.0,
+                        "value": 0.2,
+                        "derivative": 0.049
+                      }
+                    ]
+                  },
+                  "derivative": 0.0
+                },
+                {
+                  "location": 0.45,
+                  "value": {
+                    "coordinate": "ridges",
+                    "points": [
+                      {
+                        "location": -1.0,
+                        "value": -0.05,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": -0.4,
+                        "value": {
+                          "coordinate": "ridges",
+                          "points": [
+                            {
+                              "location": -1.0,
+                              "value": -0.05,
+                              "derivative": 0.5
+                            },
+                            {
+                              "location": -0.4,
+                              "value": 0.02,
+                              "derivative": 0.0
+                            },
+                            {
+                              "location": 0.0,
+                              "value": 0.02,
+                              "derivative": 0.0
+                            },
+                            {
+                              "location": 0.4,
+                              "value": 0.06,
+                              "derivative": 0.04
+                            },
+                            {
+                              "location": 1.0,
+                              "value": 0.2,
+                              "derivative": 0.049
+                            }
+                          ]
+                        },
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 0.0,
+                        "value": 0.34,
+                        "derivative": 0.0
+                      }
+                    ]
+                  },
+                  "derivative": 0.0
+                },
+                {
+                  "location": 0.55,
+                  "value": {
+                    "coordinate": "ridges",
+                    "points": [
+                      {
+                        "location": -1.0,
+                        "value": -0.05,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": -0.4,
+                        "value": {
+                          "coordinate": "ridges",
+                          "points": [
+                            {
+                              "location": -1.0,
+                              "value": -0.05,
+                              "derivative": 0.5
+                            },
+                            {
+                              "location": -0.4,
+                              "value": 0.02,
+                              "derivative": 0.0
+                            },
+                            {
+                              "location": 0.0,
+                              "value": 0.02,
+                              "derivative": 0.0
+                            },
+                            {
+                              "location": 0.4,
+                              "value": 0.06,
+                              "derivative": 0.04
+                            },
+                            {
+                              "location": 1.0,
+                              "value": 0.2,
+                              "derivative": 0.049
+                            }
+                          ]
+                        },
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 0.0,
+                        "value": 0.34,
+                        "derivative": 0.0
+                      }
+                    ]
+                  },
+                  "derivative": 0.0
+                },
+                {
+                  "location": 0.58,
+                  "value": {
+                    "coordinate": "ridges",
+                    "points": [
+                      {
+                        "location": -1.0,
+                        "value": -0.05,
+                        "derivative": 0.5
+                      },
+                      {
+                        "location": -0.4,
+                        "value": 0.02,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 0.0,
+                        "value": 0.02,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 0.4,
+                        "value": 0.06,
+                        "derivative": 0.04
+                      },
+                      {
+                        "location": 1.0,
+                        "value": 0.2,
+                        "derivative": 0.049
+                      }
+                    ]
+                  },
+                  "derivative": 0.0
+                },
+                {
+                  "location": 0.7,
+                  "value": {
+                    "coordinate": "ridges",
+                    "points": [
+                      {
+                        "location": -1.0,
+                        "value": -0.02,
+                        "derivative": 0.015
+                      },
+                      {
+                        "location": -0.4,
+                        "value": 0.02,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 0.0,
+                        "value": 0.02,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 0.4,
+                        "value": 0.06,
+                        "derivative": 0.04
+                      },
+                      {
+                        "location": 1.0,
+                        "value": 0.2,
+                        "derivative": 0.049
+                      }
+                    ]
+                  },
+                  "derivative": 0.0
+                }
+              ]
+            },
+            "derivative": 0.0
+          }
+        ]
+      },
+      "factor": {
+        "coordinate": "continents",
+        "points": [
+          {
+            "location": -0.19,
+            "value": 3.95,
+            "derivative": 0.0
+          },
+          {
+            "location": -0.15,
+            "value": {
+              "coordinate": "erosion",
+              "points": [
+                {
+                  "location": -0.6,
+                  "value": {
+                    "coordinate": "weirdness",
+                    "points": [
+                      {
+                        "location": -0.2,
+                        "value": 6.3,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 0.2,
+                        "value": 6.25,
+                        "derivative": 0.0
+                      }
+                    ]
+                  },
+                  "derivative": 0.0
+                },
+                {
+                  "location": -0.5,
+                  "value": {
+                    "coordinate": "weirdness",
+                    "points": [
+                      {
+                        "location": -0.05,
+                        "value": 6.3,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 0.05,
+                        "value": 2.67,
+                        "derivative": 0.0
+                      }
+                    ]
+                  },
+                  "derivative": 0.0
+                },
+                {
+                  "location": -0.35,
+                  "value": {
+                    "coordinate": "weirdness",
+                    "points": [
+                      {
+                        "location": -0.2,
+                        "value": 6.3,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 0.2,
+                        "value": 6.25,
+                        "derivative": 0.0
+                      }
+                    ]
+                  },
+                  "derivative": 0.0
+                },
+                {
+                  "location": -0.25,
+                  "value": {
+                    "coordinate": "weirdness",
+                    "points": [
+                      {
+                        "location": -0.2,
+                        "value": 6.3,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 0.2,
+                        "value": 6.25,
+                        "derivative": 0.0
+                      }
+                    ]
+                  },
+                  "derivative": 0.0
+                },
+                {
+                  "location": -0.1,
+                  "value": {
+                    "coordinate": "weirdness",
+                    "points": [
+                      {
+                        "location": -0.05,
+                        "value": 2.67,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 0.05,
+                        "value": 6.3,
+                        "derivative": 0.0
+                      }
+                    ]
+                  },
+                  "derivative": 0.0
+                },
+                {
+                  "location": 0.03,
+                  "value": {
+                    "coordinate": "weirdness",
+                    "points": [
+                      {
+                        "location": -0.2,
+                        "value": 6.3,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 0.2,
+                        "value": 6.25,
+                        "derivative": 0.0
+                      }
+                    ]
+                  },
+                  "derivative": 0.0
+                },
+                {
+                  "location": 0.35,
+                  "value": 6.25,
+                  "derivative": 0.0
+                },
+                {
+                  "location": 0.45,
+                  "value": {
+                    "coordinate": "ridges",
+                    "points": [
+                      {
+                        "location": -0.9,
+                        "value": 6.25,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": -0.69,
+                        "value": {
+                          "coordinate": "weirdness",
+                          "points": [
+                            {
+                              "location": 0.0,
+                              "value": 6.25,
+                              "derivative": 0.0
+                            },
+                            {
+                              "location": 0.1,
+                              "value": 0.625,
+                              "derivative": 0.0
+                            }
+                          ]
+                        },
+                        "derivative": 0.0
+                      }
+                    ]
+                  },
+                  "derivative": 0.0
+                },
+                {
+                  "location": 0.55,
+                  "value": {
+                    "coordinate": "ridges",
+                    "points": [
+                      {
+                        "location": -0.9,
+                        "value": 6.25,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": -0.69,
+                        "value": {
+                          "coordinate": "weirdness",
+                          "points": [
+                            {
+                              "location": 0.0,
+                              "value": 6.25,
+                              "derivative": 0.0
+                            },
+                            {
+                              "location": 0.1,
+                              "value": 0.625,
+                              "derivative": 0.0
+                            }
+                          ]
+                        },
+                        "derivative": 0.0
+                      }
+                    ]
+                  },
+                  "derivative": 0.0
+                },
+                {
+                  "location": 0.62,
+                  "value": 6.25,
+                  "derivative": 0.0
+                }
+              ]
+            },
+            "derivative": 0.0
+          },
+          {
+            "location": -0.1,
+            "value": {
+              "coordinate": "erosion",
+              "points": [
+                {
+                  "location": -0.6,
+                  "value": {
+                    "coordinate": "weirdness",
+                    "points": [
+                      {
+                        "location": -0.2,
+                        "value": 0.6969027,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 0.2,
+                        "value": 0.6530563,
+                        "derivative": 0.0
+                      }
+                    ]
+                  },
+                  "derivative": 0.0
+                },
+                {
+                  "location": -0.5,
+                  "value": {
+                    "coordinate": "weirdness",
+                    "points": [
+                      {
+                        "location": -0.05,
+                        "value": 0.6969027,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 0.05,
+                        "value": 0.4351369,
+                        "derivative": 0.0
+                      }
+                    ]
+                  },
+                  "derivative": 0.0
+                },
+                {
+                  "location": -0.35,
+                  "value": {
+                    "coordinate": "weirdness",
+                    "points": [
+                      {
+                        "location": -0.2,
+                        "value": 0.6969027,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 0.2,
+                        "value": 0.6530563,
+                        "derivative": 0.0
+                      }
+                    ]
+                  },
+                  "derivative": 0.0
+                },
+                {
+                  "location": -0.25,
+                  "value": {
+                    "coordinate": "weirdness",
+                    "points": [
+                      {
+                        "location": -0.2,
+                        "value": 0.6969027,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 0.2,
+                        "value": 0.6530563,
+                        "derivative": 0.0
+                      }
+                    ]
+                  },
+                  "derivative": 0.0
+                },
+                {
+                  "location": -0.1,
+                  "value": {
+                    "coordinate": "weirdness",
+                    "points": [
+                      {
+                        "location": -0.05,
+                        "value": 0.4351369,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 0.05,
+                        "value": 0.6969027,
+                        "derivative": 0.0
+                      }
+                    ]
+                  },
+                  "derivative": 0.0
+                },
+                {
+                  "location": 0.03,
+                  "value": {
+                    "coordinate": "weirdness",
+                    "points": [
+                      {
+                        "location": -0.2,
+                        "value": 0.6969027,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 0.2,
+                        "value": 0.6530563,
+                        "derivative": 0.0
+                      }
+                    ]
+                  },
+                  "derivative": 0.0
+                },
+                {
+                  "location": 0.35,
+                  "value": 0.6530563,
+                  "derivative": 0.0
+                },
+                {
+                  "location": 0.45,
+                  "value": {
+                    "coordinate": "ridges",
+                    "points": [
+                      {
+                        "location": -0.9,
+                        "value": 0.6530563,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": -0.69,
+                        "value": {
+                          "coordinate": "weirdness",
+                          "points": [
+                            {
+                              "location": 0.0,
+                              "value": 0.6530563,
+                              "derivative": 0.0
+                            },
+                            {
+                              "location": 0.1,
+                              "value": 0.13888884,
+                              "derivative": 0.0
+                            }
+                          ]
+                        },
+                        "derivative": 0.0
+                      }
+                    ]
+                  },
+                  "derivative": 0.0
+                },
+                {
+                  "location": 0.55,
+                  "value": {
+                    "coordinate": "ridges",
+                    "points": [
+                      {
+                        "location": -0.9,
+                        "value": 0.6530563,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": -0.69,
+                        "value": {
+                          "coordinate": "weirdness",
+                          "points": [
+                            {
+                              "location": 0.0,
+                              "value": 0.6530563,
+                              "derivative": 0.0
+                            },
+                            {
+                              "location": 0.1,
+                              "value": 0.13888884,
+                              "derivative": 0.0
+                            }
+                          ]
+                        },
+                        "derivative": 0.0
+                      }
+                    ]
+                  },
+                  "derivative": 0.0
+                },
+                {
+                  "location": 0.62,
+                  "value": 0.6530563,
+                  "derivative": 0.0
+                }
+              ]
+            },
+            "derivative": 0.0
+          },
+          {
+            "location": 0.03,
+            "value": {
+              "coordinate": "erosion",
+              "points": [
+                {
+                  "location": -0.6,
+                  "value": {
+                    "coordinate": "weirdness",
+                    "points": [
+                      {
+                        "location": -0.2,
+                        "value": 0.6969027,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 0.2,
+                        "value": 0.6299603,
+                        "derivative": 0.0
+                      }
+                    ]
+                  },
+                  "derivative": 0.0
+                },
+                {
+                  "location": -0.5,
+                  "value": {
+                    "coordinate": "weirdness",
+                    "points": [
+                      {
+                        "location": -0.05,
+                        "value": 0.6969027,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 0.05,
+                        "value": 0.4351369,
+                        "derivative": 0.0
+                      }
+                    ]
+                  },
+                  "derivative": 0.0
+                },
+                {
+                  "location": -0.35,
+                  "value": {
+                    "coordinate": "weirdness",
+                    "points": [
+                      {
+                        "location": -0.2,
+                        "value": 0.6969027,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 0.2,
+                        "value": 0.6299603,
+                        "derivative": 0.0
+                      }
+                    ]
+                  },
+                  "derivative": 0.0
+                },
+                {
+                  "location": -0.25,
+                  "value": {
+                    "coordinate": "weirdness",
+                    "points": [
+                      {
+                        "location": -0.2,
+                        "value": 0.6969027,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 0.2,
+                        "value": 0.6299603,
+                        "derivative": 0.0
+                      }
+                    ]
+                  },
+                  "derivative": 0.0
+                },
+                {
+                  "location": -0.1,
+                  "value": {
+                    "coordinate": "weirdness",
+                    "points": [
+                      {
+                        "location": -0.05,
+                        "value": 0.4351369,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 0.05,
+                        "value": 0.6969027,
+                        "derivative": 0.0
+                      }
+                    ]
+                  },
+                  "derivative": 0.0
+                },
+                {
+                  "location": 0.03,
+                  "value": {
+                    "coordinate": "weirdness",
+                    "points": [
+                      {
+                        "location": -0.2,
+                        "value": 0.6969027,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 0.2,
+                        "value": 0.6299603,
+                        "derivative": 0.0
+                      }
+                    ]
+                  },
+                  "derivative": 0.0
+                },
+                {
+                  "location": 0.35,
+                  "value": 0.6299603,
+                  "derivative": 0.0
+                },
+                {
+                  "location": 0.45,
+                  "value": {
+                    "coordinate": "ridges",
+                    "points": [
+                      {
+                        "location": -0.9,
+                        "value": 0.6299603,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": -0.69,
+                        "value": {
+                          "coordinate": "weirdness",
+                          "points": [
+                            {
+                              "location": 0.0,
+                              "value": 0.6299603,
+                              "derivative": 0.0
+                            },
+                            {
+                              "location": 0.1,
+                              "value": 0.13888884,
+                              "derivative": 0.0
+                            }
+                          ]
+                        },
+                        "derivative": 0.0
+                      }
+                    ]
+                  },
+                  "derivative": 0.0
+                },
+                {
+                  "location": 0.55,
+                  "value": {
+                    "coordinate": "ridges",
+                    "points": [
+                      {
+                        "location": -0.9,
+                        "value": 0.6299603,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": -0.69,
+                        "value": {
+                          "coordinate": "weirdness",
+                          "points": [
+                            {
+                              "location": 0.0,
+                              "value": 0.6299603,
+                              "derivative": 0.0
+                            },
+                            {
+                              "location": 0.1,
+                              "value": 0.13888884,
+                              "derivative": 0.0
+                            }
+                          ]
+                        },
+                        "derivative": 0.0
+                      }
+                    ]
+                  },
+                  "derivative": 0.0
+                },
+                {
+                  "location": 0.62,
+                  "value": 0.6299603,
+                  "derivative": 0.0
+                }
+              ]
+            },
+            "derivative": 0.0
+          },
+          {
+            "location": 0.06,
+            "value": {
+              "coordinate": "erosion",
+              "points": [
+                {
+                  "location": -0.6,
+                  "value": {
+                    "coordinate": "weirdness",
+                    "points": [
+                      {
+                        "location": -0.2,
+                        "value": 0.6969027,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 0.2,
+                        "value": 0.6050052,
+                        "derivative": 0.0
+                      }
+                    ]
+                  },
+                  "derivative": 0.0
+                },
+                {
+                  "location": -0.5,
+                  "value": {
+                    "coordinate": "weirdness",
+                    "points": [
+                      {
+                        "location": -0.05,
+                        "value": 0.6969027,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 0.05,
+                        "value": 0.4351369,
+                        "derivative": 0.0
+                      }
+                    ]
+                  },
+                  "derivative": 0.0
+                },
+                {
+                  "location": -0.35,
+                  "value": {
+                    "coordinate": "weirdness",
+                    "points": [
+                      {
+                        "location": -0.2,
+                        "value": 0.6969027,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 0.2,
+                        "value": 0.6050052,
+                        "derivative": 0.0
+                      }
+                    ]
+                  },
+                  "derivative": 0.0
+                },
+                {
+                  "location": -0.25,
+                  "value": {
+                    "coordinate": "weirdness",
+                    "points": [
+                      {
+                        "location": -0.2,
+                        "value": 0.6969027,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 0.2,
+                        "value": 0.6050052,
+                        "derivative": 0.0
+                      }
+                    ]
+                  },
+                  "derivative": 0.0
+                },
+                {
+                  "location": -0.1,
+                  "value": {
+                    "coordinate": "weirdness",
+                    "points": [
+                      {
+                        "location": -0.05,
+                        "value": 0.4351369,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 0.05,
+                        "value": 0.6969027,
+                        "derivative": 0.0
+                      }
+                    ]
+                  },
+                  "derivative": 0.0
+                },
+                {
+                  "location": 0.03,
+                  "value": {
+                    "coordinate": "weirdness",
+                    "points": [
+                      {
+                        "location": -0.2,
+                        "value": 0.6969027,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 0.2,
+                        "value": 0.6050052,
+                        "derivative": 0.0
+                      }
+                    ]
+                  },
+                  "derivative": 0.0
+                },
+                {
+                  "location": 0.05,
+                  "value": {
+                    "coordinate": "ridges",
+                    "points": [
+                      {
+                        "location": 0.45,
+                        "value": {
+                          "coordinate": "weirdness",
+                          "points": [
+                            {
+                              "location": -0.2,
+                              "value": 0.6969027,
+                              "derivative": 0.0
+                            },
+                            {
+                              "location": 0.2,
+                              "value": 0.6050052,
+                              "derivative": 0.0
+                            }
+                          ]
+                        },
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 0.7,
+                        "value": 0.2972561,
+                        "derivative": 0.0
+                      }
+                    ]
+                  },
+                  "derivative": 0.0
+                },
+                {
+                  "location": 0.4,
+                  "value": {
+                    "coordinate": "ridges",
+                    "points": [
+                      {
+                        "location": 0.45,
+                        "value": {
+                          "coordinate": "weirdness",
+                          "points": [
+                            {
+                              "location": -0.2,
+                              "value": 0.6969027,
+                              "derivative": 0.0
+                            },
+                            {
+                              "location": 0.2,
+                              "value": 0.6050052,
+                              "derivative": 0.0
+                            }
+                          ]
+                        },
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 0.7,
+                        "value": 0.2972561,
+                        "derivative": 0.0
+                      }
+                    ]
+                  },
+                  "derivative": 0.0
+                },
+                {
+                  "location": 0.45,
+                  "value": {
+                    "coordinate": "ridges",
+                    "points": [
+                      {
+                        "location": -0.7,
+                        "value": {
+                          "coordinate": "weirdness",
+                          "points": [
+                            {
+                              "location": -0.2,
+                              "value": 0.6969027,
+                              "derivative": 0.0
+                            },
+                            {
+                              "location": 0.2,
+                              "value": 0.6050052,
+                              "derivative": 0.0
+                            }
+                          ]
+                        },
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": -0.15,
+                        "value": 0.2688383,
+                        "derivative": 0.0
+                      }
+                    ]
+                  },
+                  "derivative": 0.0
+                },
+                {
+                  "location": 0.55,
+                  "value": {
+                    "coordinate": "ridges",
+                    "points": [
+                      {
+                        "location": -0.7,
+                        "value": {
+                          "coordinate": "weirdness",
+                          "points": [
+                            {
+                              "location": -0.2,
+                              "value": 0.6969027,
+                              "derivative": 0.0
+                            },
+                            {
+                              "location": 0.2,
+                              "value": 0.6050052,
+                              "derivative": 0.0
+                            }
+                          ]
+                        },
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": -0.15,
+                        "value": 0.2688383,
+                        "derivative": 0.0
+                      }
+                    ]
+                  },
+                  "derivative": 0.0
+                },
+                {
+                  "location": 0.58,
+                  "value": 0.6050052,
+                  "derivative": 0.0
+                }
+              ]
+            },
+            "derivative": 0.0
+          }
+        ]
+      },
+      "jaggedness": {
+        "coordinate": "continents",
+        "points": [
+          {
+            "location": -0.11,
+            "value": 0.0,
+            "derivative": 0.0
+          },
+          {
+            "location": 0.03,
+            "value": {
+              "coordinate": "erosion",
+              "points": [
+                {
+                  "location": -1.0,
+                  "value": {
+                    "coordinate": "ridges",
+                    "points": [
+                      {
+                        "location": 0.19999999,
+                        "value": 0.0,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 0.44999996,
+                        "value": 0.0,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 1.0,
+                        "value": {
+                          "coordinate": "weirdness",
+                          "points": [
+                            {
+                              "location": -0.01,
+                              "value": 1.26,
+                              "derivative": 0.0
+                            },
+                            {
+                              "location": 0.01,
+                              "value": 0.6,
+                              "derivative": 0.0
+                            }
+                          ]
+                        },
+                        "derivative": 0.0
+                      }
+                    ]
+                  },
+                  "derivative": 0.0
+                },
+                {
+                  "location": -0.78,
+                  "value": {
+                    "coordinate": "ridges",
+                    "points": [
+                      {
+                        "location": 0.19999999,
+                        "value": 0.0,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 0.44999996,
+                        "value": 0.0,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 1.0,
+                        "value": {
+                          "coordinate": "weirdness",
+                          "points": [
+                            {
+                              "location": -0.01,
+                              "value": 0.63,
+                              "derivative": 0.0
+                            },
+                            {
+                              "location": 0.01,
+                              "value": 0.3,
+                              "derivative": 0.0
+                            }
+                          ]
+                        },
+                        "derivative": 0.0
+                      }
+                    ]
+                  },
+                  "derivative": 0.0
+                },
+                {
+                  "location": -0.5775,
+                  "value": {
+                    "coordinate": "ridges",
+                    "points": [
+                      {
+                        "location": 0.19999999,
+                        "value": 0.0,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 0.44999996,
+                        "value": 0.0,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 1.0,
+                        "value": {
+                          "coordinate": "weirdness",
+                          "points": [
+                            {
+                              "location": -0.01,
+                              "value": 0.63,
+                              "derivative": 0.0
+                            },
+                            {
+                              "location": 0.01,
+                              "value": 0.3,
+                              "derivative": 0.0
+                            }
+                          ]
+                        },
+                        "derivative": 0.0
+                      }
+                    ]
+                  },
+                  "derivative": 0.0
+                },
+                {
+                  "location": -0.375,
+                  "value": 0.0,
+                  "derivative": 0.0
+                }
+              ]
+            },
+            "derivative": 0.0
+          },
+          {
+            "location": 0.65,
+            "value": {
+              "coordinate": "erosion",
+              "points": [
+                {
+                  "location": -1.0,
+                  "value": {
+                    "coordinate": "ridges",
+                    "points": [
+                      {
+                        "location": 0.19999999,
+                        "value": 0.0,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 0.44999996,
+                        "value": {
+                          "coordinate": "weirdness",
+                          "points": [
+                            {
+                              "location": -0.01,
+                              "value": 1.26,
+                              "derivative": 0.0
+                            },
+                            {
+                              "location": 0.01,
+                              "value": 0.6,
+                              "derivative": 0.0
+                            }
+                          ]
+                        },
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 1.0,
+                        "value": {
+                          "coordinate": "weirdness",
+                          "points": [
+                            {
+                              "location": -0.01,
+                              "value": 1.26,
+                              "derivative": 0.0
+                            },
+                            {
+                              "location": 0.01,
+                              "value": 0.6,
+                              "derivative": 0.0
+                            }
+                          ]
+                        },
+                        "derivative": 0.0
+                      }
+                    ]
+                  },
+                  "derivative": 0.0
+                },
+                {
+                  "location": -0.78,
+                  "value": {
+                    "coordinate": "ridges",
+                    "points": [
+                      {
+                        "location": 0.19999999,
+                        "value": 0.0,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 0.44999996,
+                        "value": 0.0,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 1.0,
+                        "value": {
+                          "coordinate": "weirdness",
+                          "points": [
+                            {
+                              "location": -0.01,
+                              "value": 1.26,
+                              "derivative": 0.0
+                            },
+                            {
+                              "location": 0.01,
+                              "value": 0.6,
+                              "derivative": 0.0
+                            }
+                          ]
+                        },
+                        "derivative": 0.0
+                      }
+                    ]
+                  },
+                  "derivative": 0.0
+                },
+                {
+                  "location": -0.5775,
+                  "value": {
+                    "coordinate": "ridges",
+                    "points": [
+                      {
+                        "location": 0.19999999,
+                        "value": 0.0,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 0.44999996,
+                        "value": 0.0,
+                        "derivative": 0.0
+                      },
+                      {
+                        "location": 1.0,
+                        "value": {
+                          "coordinate": "weirdness",
+                          "points": [
+                            {
+                              "location": -0.01,
+                              "value": 1.26,
+                              "derivative": 0.0
+                            },
+                            {
+                              "location": 0.01,
+                              "value": 0.6,
+                              "derivative": 0.0
+                            }
+                          ]
+                        },
+                        "derivative": 0.0
+                      }
+                    ]
+                  },
+                  "derivative": 0.0
+                },
+                {
+                  "location": -0.375,
+                  "value": 0.0,
+                  "derivative": 0.0
+                }
+              ]
+            },
+            "derivative": 0.0
+          }
+        ]
+      }
+    },
     "min_y": -64,
     "height": 384,
-    "size_horizontal": 1,
-    "size_vertical": 2
+    "sampling": {
+      "xz_scale": 1.0,
+      "y_scale": 1.0,
+      "xz_factor": 80.0,
+      "y_factor": 160.0
+    },
+    "top_slide": {
+      "target": -0.078125,
+      "size": 2,
+      "offset": 0
+    }
   },
   "default_block": {
     "Name": "minecraft:stone"
