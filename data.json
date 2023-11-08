@@ -74,6 +74,7 @@
   "tag/worldgen/structure",
   "tag/worldgen/world_preset",
   "texture",
+  "trigger_type",
   "trim_material",
   "trim_pattern",
   "villager_profession",
