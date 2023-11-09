@@ -54,4 +54,4 @@ jobs:
         env:
           github-username: misode
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          github-repository: misode/mcmeta
+          github-repository: misode/mcmeta-beta
