@@ -1,14 +1,14 @@
 {
-  "id": "23w45a",
-  "name": "23w45a",
+  "id": "1.21.1",
+  "name": "1.21.1",
   "release_target": null,
-  "type": "snapshot",
-  "stable": false,
-  "data_version": 3690,
-  "protocol_version": 1073741986,
-  "data_pack_version": 24,
-  "resource_pack_version": 21,
-  "build_time": "2023-11-08T13:57:06+00:00",
-  "release_time": "2023-11-08T13:59:58+00:00",
-  "sha1": "4762f81a5f9bf11247c7127db285177dcc18f75d"
+  "type": "release",
+  "stable": true,
+  "data_version": 3955,
+  "protocol_version": 767,
+  "data_pack_version": 48,
+  "resource_pack_version": 34,
+  "build_time": "2024-08-08T12:21:55+00:00",
+  "release_time": "2024-08-08T12:24:45+00:00",
+  "sha1": "4298ca546ceb8a7ba52b7e154bc0df4d952b8dbf"
 }
